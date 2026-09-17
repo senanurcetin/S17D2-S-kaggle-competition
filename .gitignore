@@ -29,3 +29,6 @@ mlruns
 
 # Challengify - test challengification files
 *_challengify*
+
+# nbresult test artifacts
+tests/*.pickle
