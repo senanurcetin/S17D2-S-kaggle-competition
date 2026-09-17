@@ -51,7 +51,7 @@ Testler: `make` veya `pytest -v`.
 
 Bu depodaki ikinci notebook, yarışma için hazırlanmış bağımsız ve İngilizce sürümdür:
 [`notebooks/house-prices-advanced-pipeline.ipynb`](notebooks/house-prices-advanced-pipeline.ipynb) →
-[Kaggle'da yayında](https://www.kaggle.com/code/senanuretin/house-prices-pipeline-and-blending)
+[Kaggle'da yayında](https://www.kaggle.com/code/senanuretin/house-prices-my-cv-said-0-1056-the-lb-disagreed)
 
 Bootcamp notebook'undan farkları: Optuna ile ayarlanmış 9 model, tekrarlı K-fold doğrulama,
 hata analizi, permutation importance ve **CV ile public leaderboard'un neden çeliştiğini**
