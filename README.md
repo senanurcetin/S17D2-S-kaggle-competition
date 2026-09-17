@@ -47,7 +47,31 @@ Ardından `houses_kaggle_competition.ipynb` dosyasını açıp çalıştırın. 
 
 Testler: `make` veya `pytest -v`.
 
+## Kaggle notebook (English)
+
+Bu depodaki ikinci notebook, yarışma için hazırlanmış bağımsız ve İngilizce sürümdür:
+[`notebooks/house-prices-advanced-pipeline.ipynb`](notebooks/house-prices-advanced-pipeline.ipynb) →
+[Kaggle'da yayında](https://www.kaggle.com/code/senanuretin/house-prices-pipeline-and-blending)
+
+Bootcamp notebook'undan farkları: Optuna ile ayarlanmış 9 model, tekrarlı K-fold doğrulama,
+hata analizi, permutation importance ve **CV ile public leaderboard'un neden çeliştiğini**
+ölçümlerle anlatan bir bölüm.
+
+### Gönderim geçmişi (public LB)
+
+| Gönderim | CV RMSLE | Public LB |
+|---|---|---|
+| 8 modelli NNLS blend (tuning öncesi) | 0.1062 | **0.11982** |
+| 17 modelli ortalama (tuned + untuned) | 0.1068 | 0.12001 |
+| 9 tuned model, eşit ağırlıklı ortalama | 0.1065 | 0.12037 |
+| 9 tuned model, NNLS ağırlıkları | 0.1056 | 0.12080 |
+
+En iyi CV'ye sahip varyantın LB'si en kötü: Optuna CV katlarına, NNLS de OOF matrisine aşırı uyuyor.
+Dört varyant arasındaki 0.001'lik fark 1.459 satırlık public LB'nin gürültü bandının içinde kaldığı için
+final gönderim, hiçbir değerlendirme kümesine ağırlık uydurmayan eşit ağırlıklı ortalamadır.
+
 ## Çıktılar
 
 - `data/submission_baseline.csv` — baseline tahminleri
-- `data/submission_final.csv` — blend modelin Kaggle gönderimi
+- `data/submission_final.csv` — bootcamp notebook'unun blend gönderimi
+- `data/submission.csv` — İngilizce notebook'un eşit ağırlıklı blend gönderimi
